@@ -56,6 +56,14 @@ bool check_via_PreOrder(Node* root1,Node* root2)
         return false;
 }
 
+// This doesn't work as 
+
+// Tree1  -->  1 2 null
+// Tree 2  ->  1 null 2
+
+// Tree1 and Tree2 have same level order but not same
+// So Level Order is modified to insert Null as well
+
 bool check_via_LevelOrder(Node* root1,Node* root2)
 {
     queue<Node*> Q1,Q2;
