@@ -50,7 +50,11 @@ void print_v(vector<int> temp)
                                         });
 }
 
-// Doesn't work always
+// Doesn't work always --> EXPECTED Failure
+// Tree1  -->  1 2 null
+// Tree 2  ->  1 null 2
+// For more details refer Same tree Program
+
 bool generateLevelOrder(Node* root)
 {
     
