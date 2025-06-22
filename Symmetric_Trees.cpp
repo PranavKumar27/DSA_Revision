@@ -50,6 +50,53 @@ void print_v(vector<int> temp)
                                         });
 }
 
+// Doesn't work always
+bool generateLevelOrder(Node* root)
+{
+    
+    if(root==nullptr)
+        return true;
+        
+    queue<Node*> q1;
+    q1.push(root);
+    
+    queue<Node*> q2;
+    q2.push(root);
+    
+    while(!q1.empty() && !q2.empty())
+    {
+        Node* node1 = q1.front();
+        q1.pop();
+        
+        Node* node2 = q2.front();
+        q2.pop();
+        
+        if(node1->data!=node2->data)
+            return false;
+            
+        if(node1->left)
+            q1.push(node1->left);
+            
+        if(node2->right)
+            q2.push(node2->right);
+            
+            
+        if(node1->right)
+            q1.push(node1->right);
+            
+        if(node2->left)
+            q2.push(node2->left);
+        cout << "q = " << q1.size() << " q2 = " << q2.size() << endl;
+        
+    }
+    cout << "q = " << q1.size() << " q2 = " << q2.size() << endl;
+    if(q1.size()==0 && q2.size()==0)
+        return true;
+    else
+        return false;
+}
+
+// Optimal Solution Works Always
 bool IsSymmetricTree(Node* root1,Node* root2)
 {
     if(root1==nullptr || root2==nullptr)
