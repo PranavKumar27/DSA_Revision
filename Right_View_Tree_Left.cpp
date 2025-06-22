@@ -60,6 +60,8 @@ void print_v(vector<int> temp)
 */
 
 // Using level Order Traversal
+// TC-> O(N)
+// SC -> O(N) 
 void RightView_UsingLevelOrder(Node* root,vector<int>& res)
 {
     queue<Node*> q;
@@ -123,9 +125,13 @@ void RightView_UsingReverseLevelOrder(Node* root,vector<int>& res)
 
 }
 
+// Better Solution than LevelOrder Traversal since SC-> O(Height of tree)
 vector<int> Right_Ans;
 // RightView
 // Using Reverse PreOrder Traversal Root Right left
+// TC-> O(N)
+// SC -> O(Height) but for Skew Trees O(N) 
+
 void RightView(Node* node,int level)
 {
     if(node==nullptr)
