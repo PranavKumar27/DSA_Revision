@@ -1,8 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <queue>
-#include <map>
-#include <algorithm>
 
 using namespace std;
 
@@ -62,7 +59,9 @@ bool findPath(Node* root,int dest,vector<int>& path)
 
     return l||r;
 }
-
+// BRUTE FORCE
+// TC --> O(2N)
+// SC --> O(2N)
 int find_Ancestor_Sol1(Node* root,int src,int dest)
 {
     cout << __FUNCTION__ << endl;
@@ -94,6 +93,9 @@ int find_Ancestor_Sol1(Node* root,int src,int dest)
     return lca;
 }
 
+// OPTIMIZED
+// TC --> O(N)
+// SC --> O(N)
 
 Node* find_Ancestor_Sol2(Node* root,int src,int dest)
 {
